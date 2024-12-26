@@ -12,30 +12,27 @@ load_dotenv()
 
 
 class Config(object):
-    # Get a token from @BotFather
-    BOT_TOKEN = os.environ.get("5459319869:AAFlrfylseUfwTuTwk5dhycP6xyNqz5TEbE")
-    # The Telegram API things
-    API_ID = os.environ.get("17756127")
-    API_HASH = os.environ.get("8d31d4872622b539217b39bb77ec9615")
+    # get a token from @BotFather
+    BOT_TOKEN = "5459319869:AAFlrfylseUfwTuTwk5dhycP6xyNqz5TEbE"
+
     # Get these values from my.telegram.org
-    # Array to store users who are authorized to use the bot
+    API_ID = 17756127
+    API_HASH = "8d31d4872622b539217b39bb77ec9615"
 
-    # File /video download location
+    # No need to change
     DOWNLOAD_LOCATION = "./DOWNLOADS"
-
-    # Telegram maximum file upload size
+    ADL_BOT_RQ = {}
+    CHUNK_SIZE = 128
     TG_MAX_FILE_SIZE = 4194304000
-
-    # Chunk size that should be used with requests : default is 128KB
-    CHUNK_SIZE = int(os.environ.get("CHUNK_SIZE", 128))
-    # Proxy for accessing youtube-dl in GeoRestricted Areas
-    # Get your own proxy from https://github.com/rg3/youtube-dl/issues/1091#issuecomment-230163061
-    HTTP_PROXY = os.environ.get("HTTP_PROXY", "")
-
-    # Set timeout for subprocess
+    HTTP_PROXY = ""
     PROCESS_MAX_TIMEOUT = 3700
 
-    OWNER_ID = os.environ.get("1359572502")
-    ADL_BOT_RQ = {}
-    AUTH_USERS = list({int(x) for x in os.environ.get("AUTH_USERS", "0").split()})
-    AUTH_USERS.append(OWNER_ID)
+    # TG Ids
+    LOG_CHANNEL = -1001730056577
+    OWNER_ID = 1359572502
+
+    # bot username without @
+    BOT_USERNAME = "ColabteleBot"
+
+    # auth users
+    AUTH_USERS = [OWNER_ID,]
